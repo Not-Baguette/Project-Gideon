@@ -58,7 +58,7 @@ To set up the payload, you will need 2 email addresses, one to send and one to r
 - Just click `Select App` and choose `Other (Custom name)`, You are free to name it anything
 
 ![image](https://user-images.githubusercontent.com/94969176/206349063-86e9bed2-55b2-4310-bb16-c764b5896801.png)
-- Copy the 16-digits code shown
+- Copy the 16-digits code given
 
 ![image](https://user-images.githubusercontent.com/94969176/206349272-a3c30194-d1e5-4c87-87fe-14d21cc65fbe.png)
 
