@@ -1,7 +1,7 @@
 # Project-Gideon
 
 ## Description
-A personal virus I made in python as a little fun project, Have a pretty nice list of features:
+A personal virus I made in python as a little fun project, This is continuation of Project Blackrod, a similar project but without a downloader and less features, you wouldn't be able to change the payload too because of that. Project Gideon will be regularly maintained and get features added if I got more nice ideas. I might not be updating it alot on Github though ~as I am too lazy to change it from personal use I made for myself or vice versa~, It got a pretty nice list of features:
 
 `Downloader` Features:
 - Updateable Payload
