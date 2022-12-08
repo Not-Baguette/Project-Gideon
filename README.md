@@ -22,7 +22,7 @@ It used to have a wifi stealer but they are often detected by antiviruses
 ## Flowchart
 ![Untitled Diagram drawio](https://user-images.githubusercontent.com/94969176/206345325-00603a96-ff7a-4c02-9fb3-18cb8979fcb6.png)
 
-## Prerequisites [Probably should've made a dependency file]
+## Prerequisites
 - Python 3.9 or up
 - Pyinstaller
 - mimetypes
@@ -36,6 +36,7 @@ It used to have a wifi stealer but they are often detected by antiviruses
 - urllib.request
 - browser_cookie3
 - base64
+Most of these don't require installing, check `requirements.txt` for non-builtins libraries
 
 
 ## How to use 
