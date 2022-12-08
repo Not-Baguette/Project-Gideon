@@ -57,7 +57,7 @@ To set up the payload, you will need 2 email addresses, one to send and one to r
 
 ![image](https://user-images.githubusercontent.com/94969176/206349063-86e9bed2-55b2-4310-bb16-c764b5896801.png)
 - Copy the 16-digits code shown
-- 
+
 ![image](https://user-images.githubusercontent.com/94969176/206349272-a3c30194-d1e5-4c87-87fe-14d21cc65fbe.png)
 
 #### Putting it up on the payload and setting up the rest
@@ -113,8 +113,11 @@ To set up the payload, you will need 2 email addresses, one to send and one to r
 - Wait until it finishes (If you got any error, probably you either casually changed ".png" extension to ".ico" without [converters](https://convertico.com/) or you did not properly install pyinstaller)
 - Once finished, a new directory called `build` and `dist` should appear, open `dist` and your personal downloader should be ready
 
-## How to infect others
-TBD
+## How to infect other devices
+Just place the downloader (the payload is hosted on the internet) on a hard drive and run it on another windows PC, or you can do the good old social engineering and make people download it I guess? (Remember this is only for educational purposes)
+
+## How to Change payload
+Since this is a general use downloader, you also can change the payload with your own personal payload, Just upload the payload and renew the link on your pastebin and it should work. So yeah you don't need to infect a device twice if you got a new payload.
 
 ## Removal (if you accidentally run it)
 Relax, I did not input my credentials to the source code so if you accidentally run the payload, just calmly terminate it from `Task Manager`. But If you run the Downloader, It will run every startup and infect you every few hours too. To stop this, follow these steps;
