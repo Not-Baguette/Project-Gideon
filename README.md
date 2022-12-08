@@ -36,6 +36,7 @@ It used to have a wifi stealer but they are often detected by antiviruses
 - urllib.request
 - browser_cookie3
 - base64
+
 Most of these don't require installing, check [`requirements.txt`](https://github.com/Not-Baguette/Project-Gideon/blob/main/requirements.txt) for non-builtins libraries
 
 
