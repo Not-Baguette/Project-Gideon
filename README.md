@@ -2,13 +2,13 @@
 
 ## Description
 A personal virus I made in python as a little fun project, Have a pretty nice list of features:
-* `Downloader` Features:
+`Downloader` Features:
 - Updateable Payload
 - Easily modifiable sleep time
 - Silent and light
 - No need for any paid services or complicated stuff
 
-* `Payload` Features:
+`Payload` Features:
 - Steals Chrome History
 - Steals some specific tabs you want with *cookies included*
 - Steals Chrome Password
