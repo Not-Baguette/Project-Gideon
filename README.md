@@ -2,13 +2,13 @@
 
 ## Description
 A personal virus I made in python as a little fun project, Have a pretty nice list of features:
-+ `Downloader` Features:
+* `Downloader` Features:
 - Updateable Payload
 - Easily modifiable sleep time
 - Silent and light
 - No need for any paid services or complicated stuff
 
-+ `Payload` Features:
+* `Payload` Features:
 - Steals Chrome History
 - Steals some specific tabs you want with *cookies included*
 - Steals Chrome Password
@@ -37,5 +37,6 @@ It used to have a wifi stealer but they are often detected by antiviruses
 
 
 ## How to use 
-```Disclaimer: Educational Purposes only, I do not hold any responsibility on what others do using this program. This program is only meant to teach how viruses can be made with innocent pieces of codes. By using this as an inspiration or using the code itself, you are agreeing that I do not hold any responsibilities of what you do```
+`Disclaimer: Educational Purposes only, I do not hold any responsibility on what others do using this program. This program is only meant to teach how viruses can be made with innocent pieces of codes. By using this as an inspiration or using the code itself, you are agreeing that I do not hold any responsibilities of what you do`
+
 TBD
