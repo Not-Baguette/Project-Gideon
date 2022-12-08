@@ -111,7 +111,22 @@ To set up the payload, you will need 2 email addresses, one to send and one to r
 ![image](https://user-images.githubusercontent.com/94969176/206350644-a3fb6f0d-af6e-4854-97d0-894aed3deb3f.png)
 - type `Pyinstaller -F -w downloader.exe`, I usually use a powerpoint icon to make it seem more legit, if you are using that as well, I provided mine in the project files, You can write `Pyinstaller -F -w -i pptxico.ico downloader.exe`
 - Wait until it finishes (If you got any error, probably you either casually changed ".png" extension to ".ico" without [converters](https://convertico.com/) or you did not properly install pyinstaller)
-- Once finished, a new directory called `build` and `dist` should appear, open `dist` and your personal payload should be ready
+- Once finished, a new directory called `build` and `dist` should appear, open `dist` and your personal downloader should be ready
 
+## How to infect others
+TBD
 
+## Removal (if you accidentally run it)
+Relax, I did not input my credentials to the source code so if you accidentally run the payload, just calmly terminate it from `Task Manager`. But If you run the Downloader, It will run every startup and infect you every few hours too. To stop this, follow these steps;
+- Open `registry Editor`
 
+![image](https://user-images.githubusercontent.com/94969176/206354449-23807053-999d-47d0-b5fa-0c133cba08d0.png)
+- Change it to `Computer\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run`
+- You should see something called `Windows Security` as a key, right click and click delete
+ 
+![image](https://user-images.githubusercontent.com/94969176/206354659-4db6379b-a698-4eb6-b63f-dd0f73c6441a.png)
+- Since I placed it in somewhat hidden place, We should also remove it from our system despite being unnecessary, just to completely clean it up. Go to `C:\Users\{Your windows profile username}\AppData\Roaming\Microsoft\Windows\Start Menu\programs\`
+- Delete anything resembling the payload and the downloader
+
+![image](https://user-images.githubusercontent.com/94969176/206355150-b7da0ddb-6c0f-42a5-9977-f96805be872a.png)
+- And that's it! You're completely uninfected
