@@ -1,8 +1,9 @@
 # Project-Gideon
 
 ## Description
-A personal virus I made in python as a little fun project, This is continuation of Project Blackrod, a similar project but without a downloader and less features, you wouldn't be able to change the payload too because of that. Project Gideon will be regularly maintained and get features added if I got more nice ideas. I might not be updating it alot on Github though ~as I am too lazy to change it from personal use I made for myself or vice versa~, It got a pretty nice list of features:
+A personal virus I made in python as a little fun project, This is continuation of Project Blackrod, a similar project but without a downloader and less features, you wouldn't be able to change the payload too because of that. Project Gideon will be regularly maintained and get features added if I got more nice ideas. I might not be updating it alot on Github though ~as I am too lazy to change it from personal use I made for myself or vice versa.~
 
+## Features:
 `Downloader` Features:
 - Updateable Payload
 - Easily modifiable sleep time
@@ -21,7 +22,7 @@ It used to have a wifi stealer but they are often detected by antiviruses
 ## Flowchart
 ![Untitled Diagram drawio](https://user-images.githubusercontent.com/94969176/206345325-00603a96-ff7a-4c02-9fb3-18cb8979fcb6.png)
 
-## Prerequisites [Probably should've made a dependency list]
+## Prerequisites [Probably should've made a dependency file]
 - Python 3.9 or up
 - Pyinstaller
 - mimetypes
