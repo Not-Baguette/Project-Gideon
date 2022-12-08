@@ -68,7 +68,7 @@ To set up the payload, you will need 2 email addresses, one to send and one to r
 
 ![image](https://user-images.githubusercontent.com/94969176/206349684-0abc6646-8dad-46bb-bdfe-eb3d8833a520.png)
 - Scroll down to `clairvoyance_mod` function
-- Modify `EXTENSION`, `DETECT_KEYWORD`, "Days" (As in how many days back since modified) as you liked, I limited scans on `C:\\` to `DETECT_TUPLE`, you can change this by just changing the contents of the tuple to `("C:\\",)` 
+- Modify `EXTENSION`, `DETECT_KEYWORD`, `Days` (As in how many days back since modified) as you liked, I limited scans on `C:\\` to `DETECT_TUPLE`, you can change this by just changing the contents of the tuple to `("C:\\",)` 
 
 ![image](https://user-images.githubusercontent.com/94969176/206349810-97dcd923-9386-4698-ae2f-72c0fe3612e9.png)
 - You also can download different types of websites with cookies on it by changing the requirements on this piece of code
