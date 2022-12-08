@@ -80,7 +80,38 @@ To set up the payload, you will need 2 email addresses, one to send and one to r
 
 ![image](https://user-images.githubusercontent.com/94969176/206350644-a3fb6f0d-af6e-4854-97d0-894aed3deb3f.png)
 - type `Pyinstaller -F -w payload.exe`, I usually use a powerpoint icon to make it seem more legit, if you are using that as well, I provided mine in the project files, You can write `Pyinstaller -F -w -i pptxico.ico payload.exe`
-
+- Wait until it finishes (If you got any error, probably you either casually changed ".png" extension to ".ico" without [converters](https://convertico.com/) or you did not properly install pyinstaller)
+- Once finished, a new directory called `build` and `dist` should appear, open `dist` and your personal payload should be ready
 
 ### Setting up the downloader
 - Open the downloader in an IDE or any code editor (Even Notepad)
+- Make sure to already create the payload
+- Open [Pastebin](https://pastebin.com/), Make sure to sign in/Sign Up so you have access into it. We are using pastebin because it provides a static link that we could use as a pointer to a link that changes once you change the file, *I am personally using discord as a dynamic link but it is incredibly up to you* (I reccomend Google Drive if it goes undetected by it as suspicious), just make sure the link will directly downloads the file. 
+- Back to Pastebin, Just put the dynamic link inside the pastebin and set the `paste expiration` to `never` and `paste exposure` to `unlisted`
+- Click `Create new paste`
+
+![image](https://user-images.githubusercontent.com/94969176/206352778-e30ceeaa-3983-41c8-b13f-f12240d1a441.png)
+- You should be redirected to your own pastebin, click `raw`
+
+![image](https://user-images.githubusercontent.com/94969176/206352955-b2d91c91-de57-4861-b8c5-495ade7fd389.png)
+- Copy the link, it should start with `https://pastebin.com/raw/` and end with a string of random numbers and letters
+
+![image](https://user-images.githubusercontent.com/94969176/206353154-1755935e-8f8b-463d-82e9-90a7b1f54c56.png)
+- Scroll to `download_payload` function and put your pastebin link there
+
+![image](https://user-images.githubusercontent.com/94969176/206353671-c50c2a06-1459-4acd-9830-0b2571631816.png)
+- Scroll to the bottom and change the `file_name` argument to something that does not raise suspicion if found
+
+![image](https://user-images.githubusercontent.com/94969176/206353381-c86c5f4c-3be6-48e1-b8e2-9ec76b2da354.png)
+
+#### Packing it into an EXE
+- Open `Command Prompt`
+- Get the current directory (Folder) name and add `cd ` before it (If it's on another drive, just write the drive name, I.e. if the file is on D: drive, type `D:` and press enter)
+
+![image](https://user-images.githubusercontent.com/94969176/206350644-a3fb6f0d-af6e-4854-97d0-894aed3deb3f.png)
+- type `Pyinstaller -F -w downloader.exe`, I usually use a powerpoint icon to make it seem more legit, if you are using that as well, I provided mine in the project files, You can write `Pyinstaller -F -w -i pptxico.ico downloader.exe`
+- Wait until it finishes (If you got any error, probably you either casually changed ".png" extension to ".ico" without [converters](https://convertico.com/) or you did not properly install pyinstaller)
+- Once finished, a new directory called `build` and `dist` should appear, open `dist` and your personal payload should be ready
+
+
+
