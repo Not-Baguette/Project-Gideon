@@ -4,8 +4,8 @@
 A personal virus I made in python as a little fun project, This is continuation of Project Blackrod, a similar project but without a downloader and less features, you wouldn't be able to change the payload too because of that. Project Gideon will be regularly maintained and get features added if I got more nice ideas. I might not be updating it alot on Github though ~as I am too lazy to change it from personal use I made for myself or vice versa.~
 
 ## Todo
-[] Make the payload run with multiprocessing so it wont stuck on `os.system()`
-[] Change the payload file dump location from Documents to somewhere more covert but unprotected (Documents folder are protected by antiviruses like Avast)
+[ ] Make the payload run with multiprocessing so it wont stuck on `os.system()`
+[ ] Change the payload file dump location from Documents to somewhere more covert but unprotected (Documents folder are protected by antiviruses like Avast)
 
 ## Features:
 `Downloader` Features:
