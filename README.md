@@ -93,7 +93,7 @@ To set up the payload, you will need 2 email addresses, one to send and one to r
 ![image](https://user-images.githubusercontent.com/94969176/206352778-e30ceeaa-3983-41c8-b13f-f12240d1a441.png)
 - You should be redirected to your own pastebin, click `raw`
 
-![image](https://user-images.githubusercontent.com/94969176/206352955-b2d91c91-de57-4861-b8c5-495ade7fd389.png)
+![image](https://user-images.githubusercontent.com/94969176/206353978-f866d418-9edd-40d2-897f-906323e55b3a.png)
 - Copy the link, it should start with `https://pastebin.com/raw/` and end with a string of random numbers and letters
 
 ![image](https://user-images.githubusercontent.com/94969176/206353154-1755935e-8f8b-463d-82e9-90a7b1f54c56.png)
