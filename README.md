@@ -128,8 +128,8 @@ Just place the downloader (the payload is hosted on the internet) on a hard driv
 ## How to Change payload
 Since this is a general use downloader, you also can change the payload with your own personal payload, Just upload the payload and renew the link on your pastebin and it should work. So yeah you don't need to infect a device twice if you got a new payload. You can also just modify the given payload and follow the steps above again.
 
-## Removal (if you accidentally run it)
-Relax, I did not input my credentials to the source code so if you accidentally run the payload, just calmly terminate it from `Task Manager`. But If you run the Downloader, It will run every startup and infect you every few hours too. To stop this, follow these steps;
+## Removal
+Relax, I did not input my credentials to the source code so if you accidentally run the payload, just calmly terminate it from `Task Manager`. But If you run the Downloader, It will run every startup and infect you every few hours too. To stop this, terminate it from `Task Manager` and follow these steps;
 - Open `registry Editor`
 
 ![image](https://user-images.githubusercontent.com/94969176/206354449-23807053-999d-47d0-b5fa-0c133cba08d0.png)
