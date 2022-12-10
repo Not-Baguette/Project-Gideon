@@ -124,7 +124,7 @@ To set up the payload, you will need 2 email addresses, one to send and one to r
 - Once finished, a new directory called `build` and `dist` should appear, open `dist` and your personal downloader should be ready
 
 ## How to infect other devices
-Just place the downloader (the payload is hosted on the internet) on a hard drive and run it on another windows PC, or you can do the good old social engineering and make people download and run it I guess? (Remember this is only for educational purposes)
+Just place the downloader (the payload is hosted on the internet) on a hard drive/internet and run it on another windows PC, or you can do the good old social engineering and make people download and run it I guess? (Remember this is only for educational purposes)
 
 ## How to Change payload
 Since this is a general use downloader, you also can change the payload with your own personal payload, Just upload the payload and renew the link on your pastebin and it should work. So yeah you don't need to infect a device twice if you got a new payload. You can also just modify the given payload and follow the steps above again.
