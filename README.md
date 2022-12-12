@@ -13,6 +13,7 @@ A personal virus I made in python as a little fun project, This is continuation 
 - [ ] Make a builder for easier installation (Reason: I just never did it so I am not sure how and which approach should I do, should I go with `setup.py`? `build.bat`? [Probably going with `build.bat`])
 - [ ] Add `Hidden` attribute to the payload via either win32 lib or subprocessing lib (Reason: I am not sure if it would be easily detectable by an antivirus if I do that)
 - [ ] Consideration for sending stuff like chrome password etc via discord webhook
+- [ ] Make a switch incase you want to do it (Reason: Might be slightly memory consuming to check it every few seconds)
 
 ## Features:
 `Downloader` Features:
