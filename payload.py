@@ -309,7 +309,6 @@ except Exception:  # NOQA
 
 try:
     file_list += clairvoyance_mod()
-    first_run = False
 except Exception:  # NOQA
     pass
 
