@@ -6,9 +6,9 @@ A personal virus I made in python as a little fun project, This is continuation 
 ## Todo (Totally not me just being lazy)
 - [ ] Make a builder for easier installation
 - [ ] Make the payload run with multiprocessing so it wont stuck on `os.system()`
-- [ ] Change the payload file dump location from Documents to somewhere more covert but unprotected (Documents folder are protected by antiviruses like Avast)
+- [X] Change the payload file dump location from Documents to somewhere more covert but unprotected (Documents folder are protected by antiviruses like Avast)
 - [ ] Add `Hidden` attribute to the payload via either win32 lib or subprocessing lib
-- [ ] Delete downloaded forms in `payload.py` after sending it
+- [X] Delete downloaded forms in `payload.py` after sending it
 
 ## Features:
 `Downloader` Features:
