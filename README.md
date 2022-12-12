@@ -63,7 +63,7 @@ To set up the payload, you will need 2 email addresses, one to send and one to r
 - Click your profile picture at top right of the page
 - Click `Manage Your Google Account`
 - Go to `Security` Tab
-- Scroll down to 2FA and follow the steps
+- Scroll down to 2FA, click, and follow the steps
 - After you finished, Proceed with getting the app password
 
 #### Getting the App Password
