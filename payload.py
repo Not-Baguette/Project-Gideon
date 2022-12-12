@@ -19,7 +19,7 @@ from json import loads
 
 # The mail addresses and password
 SENDER = ""  # Syntax: <Example.email1@gmail.com>
-SENDER_P = ""  # Put your app password here
+SENDER_P = ""  # App password here, 16-character code, all lowercase and no space, Syntax: "<totallyyrealpass>"
 RECEIVER = ""  # Syntax: <Example.email2@gmail.com>
 
 
