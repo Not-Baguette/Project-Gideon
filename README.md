@@ -7,7 +7,7 @@ A personal virus I made in python as a little fun project, This is continuation 
 ### Once this is done, I will make another release marking the second update
 - [X] Change the payload file dump location from Documents to somewhere more covert but unprotected (Documents folder are protected by antiviruses like Avast)
 - [X] Delete downloaded forms in `payload.py` after sending it
-- [ ] Testing to make sure everything works
+- [X] Testing to make sure everything works
 
 ### I dunno when I will do this but I'll get to it sooner or later
 - [ ] Make a builder for easier installation (Reason: I just never did it so I am not sure how and which approach should I do, should I go with `setup.py`? `build.bat`? [Probably going with `build.bat`])
