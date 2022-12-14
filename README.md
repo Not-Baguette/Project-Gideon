@@ -4,10 +4,8 @@
 A personal virus I made in python as a little fun project, This is continuation of Project Blackrod, a similar project but without a downloader and less features, you wouldn't be able to change the payload too because of that. Project Gideon will be regularly maintained and get features added if I got more nice ideas. I might not be updating it alot on Github though ~as I am too lazy to change it from personal use I made for myself or vice versa.~
 
 ## Todo (Totally not me just being lazy)
-### Once this is done, I will make another release marking the second update
-- [X] Change the payload file dump location from Documents to somewhere more covert but unprotected (Documents folder are protected by antiviruses like Avast)
-- [X] Delete downloaded forms in `payload.py` after sending it
-- [X] Testing to make sure everything works
+### Once this is done, I will make the third release
+- [ ] Empty for now
 
 ### I dunno when I will do this but I'll get to it sooner or later
 - [ ] Make a builder for easier installation (Reason: I just never did it so I am not sure how and which approach should I do, should I go with `setup.py`? `build.bat`? [Probably going with `build.bat`])
