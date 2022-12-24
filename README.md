@@ -6,7 +6,7 @@ A personal virus I made in python as a little fun project, This is continuation 
 ## Todo (Totally not me just being lazy)
 ### Once this is done, I will make the third release
 - [ ] Make it more effecient by attaching several attachments at once
-- [ ] Placeholder
+- [ ] Make it so that chrome is unopenable via `ctypes` lib
 
 ### I dunno when I will do this but I'll get to it sooner or later
 - [ ] Make a builder for easier installation (Reason: I just never did it so I am not sure how and which approach should I do, should I go with `setup.py`? `build.bat`? [Probably going with `build.bat`])
