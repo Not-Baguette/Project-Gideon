@@ -4,15 +4,17 @@
 A personal virus I made in python as a little fun project, This is continuation of Project Blackrod, a similar project but without a downloader and less features, you wouldn't be able to change the payload too because of that. Project Gideon will be regularly maintained and get features added if I got more nice ideas. I might not be updating it alot on Github though ~as I am too lazy to change it from personal use I made for myself or vice versa.~
 
 ## Todo (Totally not me just being lazy)
-### Once this is done, I will make the third release
-- [ ] Make it more effecient by attaching several attachments at once
-- [ ] Make it so that chrome is unopenable via `ctypes` lib
+### Once this is done, I will make the third Major release
+- [X] Make it more effecient by attaching several attachments at once
+- [X] Win 11 Adaptibility checks
+- [ ] Readding Clairvoyance 
 
 ### I dunno when I will do this but I'll get to it sooner or later
+- [ ] Make it so that chrome is unopenable via `ctypes` lib
 - [ ] Make a builder for easier installation (Reason: I just never did it so I am not sure how and which approach should I do, should I go with `setup.py`? `build.bat`? [Probably going with `build.bat`])
 - [ ] Add `Hidden` attribute to the payload via either win32 lib or subprocessing lib (Reason: I am not sure if it would be easily detectable by an antivirus if I do that)
 - [ ] Consideration for sending stuff like chrome password etc via discord webhook
-- [ ] Make a switch incase you want to do it (Reason: Might be slightly memory consuming to check it every few seconds)
+- [ ] Make a switch incase you want to do it at a specific time (Reason: Might be slightly memory consuming to check it every few seconds)
 
 ## Features:
 `Downloader` Features:
@@ -22,13 +24,13 @@ A personal virus I made in python as a little fun project, This is continuation 
 - No need for any paid services or complicated stuff
 
 `Payload` Features:
-- Steals Chrome History
-- Steals some specific tabs you want with *cookies included*
-- Steals Chrome Password
-- Steals Files with certain `keywords`, `Date modified`, and `Extension`
+- Silently sends Chrome History
+- Silently sends some specific tabs you want with *cookies included*
+- Silently sends Chrome Password
+- Silently sends Files with certain `keywords`, `Date modified`, and `Extension`
 - Send via email
 
-It used to have a wifi stealer but they are often detected by antiviruses
+It used to have a wifi pw stealer but they are often detected by antiviruses
 
 ## Flowchart
 ![Untitled Diagram drawio](https://user-images.githubusercontent.com/94969176/206345325-00603a96-ff7a-4c02-9fb3-18cb8979fcb6.png)
@@ -39,8 +41,6 @@ It used to have a wifi stealer but they are often detected by antiviruses
 - mimetypes
 - smtplib
 - email.message 
-- win32crypt
-- Crypto.Cipher 
 - sqlite3
 - urllib2
 - browserhistory 
@@ -48,6 +48,7 @@ It used to have a wifi stealer but they are often detected by antiviruses
 - browser_cookie3
 - base64
 
+(Not updated yet)
 Most of these don't require installing, check [`requirements.txt`](https://github.com/Not-Baguette/Project-Gideon/blob/main/requirements.txt) for non-builtins libraries
 
 
