@@ -4,7 +4,7 @@
 A personal virus I made in python as a little fun project, This is continuation of Project Blackrod, a similar project but without a downloader and less features, you wouldn't be able to change the payload too because of that. Project Gideon will be regularly maintained and get features added if I got more nice ideas. I might not be updating it alot on Github though ~as I am too lazy to change it from personal use I made for myself or vice versa.~
 
 ## Todo (Totally not me just being lazy)
-### Once this is done, I will make the third Major release
+### Once this is done, I will make the 1.3.0 Minor release
 - [X] Make it more effecient by attaching several attachments at once
 - [X] Win 11 Adaptibility checks
 - [X] Readding Clairvoyance 
