@@ -7,7 +7,7 @@ A personal virus I made in python as a little fun project, This is continuation 
 ### Once this is done, I will make the third Major release
 - [X] Make it more effecient by attaching several attachments at once
 - [X] Win 11 Adaptibility checks
-- [ ] Readding Clairvoyance 
+- [X] Readding Clairvoyance 
 
 ### I dunno when I will do this but I'll get to it sooner or later
 - [ ] Make it so that chrome is unopenable via `ctypes` lib
