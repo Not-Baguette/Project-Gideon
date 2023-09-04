@@ -89,15 +89,6 @@ To set up the payload, you will need 2 email addresses, one to send and one to r
 ![image](https://user-images.githubusercontent.com/94969176/206350298-99828a85-63fb-4609-96bd-342cec42f06a.png)
 - Once you are ready, save it
 
-#### Packing it into an EXE
-- Open `Command Prompt`
-- Get the current directory (Folder) name and add `cd ` before it (If it's on another drive, just write the drive name, I.e. if the file is on D: drive, type `D:` and press enter)
-
-![image](https://user-images.githubusercontent.com/94969176/206350644-a3fb6f0d-af6e-4854-97d0-894aed3deb3f.png)
-- type `Pyinstaller -F -w payload.exe`, I usually use a powerpoint icon to make it seem more legit, if you are using that as well, I provided mine in the project files, You can write `Pyinstaller -F -w -i pptxico.ico payload.exe`
-- Wait until it finishes (If you got any error, probably you either casually changed ".png" extension to ".ico" without [converters](https://convertico.com/) or you did not properly install pyinstaller)
-- Once finished, a new directory called `build` and `dist` should appear, open `dist` and your personal payload should be ready
-
 ### Setting up the downloader
 - Open the downloader in an IDE or any code editor (Even Notepad)
 - Make sure to already create the payload
