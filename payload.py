@@ -63,7 +63,7 @@ def get_chrome_history():
             pass
 
         try:
-            if not os.path.exists(f"C:\\temp") or not os.path.isfile("C:\\temp\\.tempcache.csv"):
+            if not os.path.exists("C:\\temp") or not os.path.isfile("C:\\temp\\.tempcache.csv"):
                 try:
                     os.mkdir("C:\\temp\\")
                 except Exception:  # NOQA
