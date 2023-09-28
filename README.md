@@ -1,4 +1,18 @@
 # Project-Gideon
+<div align="center">
+
+[![Not-Baguette - Project-Gideon](https://img.shields.io/static/v1?label=Not-Baguette&message=Project-Gideon&color=blue&logo=github)](https://github.com/Not-Baguette/Project-Gideon "Go to GitHub repo")
+[![GitHub tag](https://img.shields.io/github/tag/Not-Baguette/Project-Gideon?include_prereleases=&sort=semver&color=blue)](https://github.com/Not-Baguette/Project-Gideon/releases/)
+[![License](https://img.shields.io/badge/License-MIT-blue)](#license)
+[![issues - Project-Gideon](https://img.shields.io/github/issues/Not-Baguette/Project-Gideon)](https://github.com/Not-Baguette/Project-Gideon/issues)
+</div>
+
+<div align="center">
+
+[![View site - Project-Gideon](https://img.shields.io/badge/View_site-GH_Pages-2ea44f?style=for-the-badge)](https://github.com/Not-Baguette/Project-Gideon)
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f0082e38c41644ddb55e77a5e50185fa)](https://app.codacy.com/gh/Not-Baguette/Project-Gideon/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+</div>
 
 ## Description
 A personal virus I made in python as a little fun project, This is continuation of Project Blackrod, a similar project but without a downloader and less features, you wouldn't be able to change the payload too because of that. Project Gideon will be regularly maintained and get features added if I got more nice ideas. I might not be updating it alot on Github though ~as I am too lazy to change it from personal use I made for myself or vice versa.~
