@@ -1,3 +1,2 @@
 pyinstaller
 browserhistory
-browser_cookie3
