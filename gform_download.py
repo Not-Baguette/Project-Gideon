@@ -1,6 +1,6 @@
 import requests
 import urllib.request
-import browser_cookie3
+import browser_cookie3 # pip install browser_cookie3
 
 def download_form(url, i):
     try:
