@@ -56,12 +56,10 @@ It used to have a wifi pw stealer but they are often detected by antiviruses
 - mimetypes
 - smtplib
 - email.message 
-- sqlite3
 - urllib2
 - browserhistory 
 - urllib.request
 - browser_cookie3
-- base64
 
 (Not updated yet)
 Most of these don't require installing, check [`requirements.txt`](https://github.com/Not-Baguette/Project-Gideon/blob/main/requirements.txt) for non-builtins libraries
