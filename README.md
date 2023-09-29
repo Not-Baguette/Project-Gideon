@@ -19,10 +19,13 @@
 A personal virus I made in python as a little fun project, This is continuation of Project Blackrod, a similar project but without a downloader and less features, you wouldn't be able to change the payload too because of that. Project Gideon will be regularly maintained and get features added if I got more nice ideas. I might not be updating it alot on Github though ~as I am too lazy to change it from personal use I made for myself or vice versa.~
 
 ## Todo (Totally not me just being lazy)
-### Once this is done, I will make the 1.3.0 Minor Update
-- [X] Make it more effecient by attaching several attachments at once
-- [X] Win 11 Adaptibility checks
-- [X] Readding Clairvoyance 
+### Once this is done, I will make the 2.0.1 Minor Update
+- [X] Bug Fixes
+- [X] Fixes on file generations
+- [X] Removed Redundant Feature
+- [X] Actually Test it on yourself
+- [X] Removed Form Downloader (Still working but seperated, see: [Gform Downloader](https://github.com/Not-Baguette/Project-Gideon/blob/1.4.0-stable/gform_download.py))
+- [X] More fixes due to decoupling
 
 ### I dunno when I will do this but I'll get to it sooner or later
 - [ ] Make it so that chrome is unopenable via `ctypes` lib
@@ -40,7 +43,7 @@ A personal virus I made in python as a little fun project, This is continuation 
 
 `Payload` Features:
 - Silently sends Chrome History
-- Silently sends some specific tabs you want with *cookies included*
+- Silently sends some specific tabs you want with *cookies included* [Decoupled, See: [Gform Downloader](https://github.com/Not-Baguette/Project-Gideon/blob/1.4.0-stable/gform_download.py)]
 - Silently sends Chrome Password
 - Silently sends Files with certain `keywords`, `Date modified`, and `Extension`
 - Send via email
@@ -56,12 +59,9 @@ It used to have a wifi pw stealer but they are often detected by antiviruses
 - mimetypes
 - smtplib
 - email.message 
-- sqlite3
 - urllib2
 - browserhistory 
 - urllib.request
-- browser_cookie3
-- base64
 
 (Not updated yet)
 Most of these don't require installing, check [`requirements.txt`](https://github.com/Not-Baguette/Project-Gideon/blob/main/requirements.txt) for non-builtins libraries
