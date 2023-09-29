@@ -1,5 +1,3 @@
 pyinstaller
-pywin32
-PyCrypto
 browserhistory
 browser_cookie3
