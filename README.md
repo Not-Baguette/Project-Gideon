@@ -19,12 +19,13 @@
 A personal virus I made in python as a little fun project, This is continuation of Project Blackrod, a similar project but without a downloader and less features, you wouldn't be able to change the payload too because of that. Project Gideon will be regularly maintained and get features added if I got more nice ideas. I might not be updating it alot on Github though ~as I am too lazy to change it from personal use I made for myself or vice versa.~
 
 ## Todo (Totally not me just being lazy)
-### Once this is done, I will make the 1.4.0 Minor Update
+### Once this is done, I will make the 2.0.1 Minor Update
 - [X] Bug Fixes
 - [X] Fixes on file generations
 - [X] Removed Redundant Feature
 - [X] Actually Test it on yourself
 - [X] Removed Form Downloader (Still working but seperated, see: [TBA])
+- [X] More fixes due to decoupling
 
 ### I dunno when I will do this but I'll get to it sooner or later
 - [ ] Make it so that chrome is unopenable via `ctypes` lib
