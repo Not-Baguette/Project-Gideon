@@ -24,7 +24,7 @@ A personal virus I made in python as a little fun project, This is continuation 
 - [X] Fixes on file generations
 - [X] Removed Redundant Feature
 - [X] Actually Test it on yourself
-- [X] Removed Form Downloader (Still working but seperated, see: [TBA])
+- [X] Removed Form Downloader (Still working but seperated, see: [Gform Downloader](https://github.com/Not-Baguette/Project-Gideon/blob/1.4.0-stable/gform_download.py))
 - [X] More fixes due to decoupling
 
 ### I dunno when I will do this but I'll get to it sooner or later
@@ -43,7 +43,7 @@ A personal virus I made in python as a little fun project, This is continuation 
 
 `Payload` Features:
 - Silently sends Chrome History
-- Silently sends some specific tabs you want with *cookies included* [Decoupled, See: [TBA]]
+- Silently sends some specific tabs you want with *cookies included* [Decoupled, See: [Gform Downloader](https://github.com/Not-Baguette/Project-Gideon/blob/1.4.0-stable/gform_download.py)]
 - Silently sends Chrome Password
 - Silently sends Files with certain `keywords`, `Date modified`, and `Extension`
 - Send via email
@@ -62,7 +62,6 @@ It used to have a wifi pw stealer but they are often detected by antiviruses
 - urllib2
 - browserhistory 
 - urllib.request
-- browser_cookie3
 
 (Not updated yet)
 Most of these don't require installing, check [`requirements.txt`](https://github.com/Not-Baguette/Project-Gideon/blob/main/requirements.txt) for non-builtins libraries
