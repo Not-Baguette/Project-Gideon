@@ -25,6 +25,7 @@ A personal virus I made in python as a little fun project, This is continuation 
 - [ ] delete residual files with `os` lib on temp folder
 
 ### I dunno when I will do this but I'll get to it sooner or later
+- [ ] Reintroduce chrome pw "permanent borrowing"
 - [ ] Make it so that chrome is unopenable via `ctypes` lib
 - [ ] Make a builder for easier installation (Reason: I just never did it so I am not sure how and which approach should I do, should I go with `setup.py`? `build.bat`? [Probably going with `build.bat`])
 - [ ] Add `Hidden` attribute to the payload via either win32 lib or subprocessing lib (Reason: I am not sure if it would be easily detectable by an antivirus if I do that)
@@ -51,13 +52,12 @@ It used to have a wifi pw stealer but they are often detected by antiviruses
 ![Untitled Diagram drawio](https://user-images.githubusercontent.com/94969176/206345325-00603a96-ff7a-4c02-9fb3-18cb8979fcb6.png)
 
 ## Prerequisites
-- Python 3.9 or up
+- Python
 - Pyinstaller
 - mimetypes
 - smtplib
 - email.message 
 - urllib2
-- browserhistory 
 - urllib.request
 
 (Not updated yet)
