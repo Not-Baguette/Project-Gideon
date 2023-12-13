@@ -18,15 +18,18 @@
 ## Description
 A personal virus I made in python as a little fun project, This is continuation of Project Blackrod, a similar project but without a downloader and less features, you wouldn't be able to change the payload too because of that. Project Gideon will be regularly maintained and get features added if I got more nice ideas. I might not be updating it alot on Github though ~as I am too lazy to change it from personal use I made for myself or vice versa.~
 
-Warning: `readme.md` is slightly outdated since I made it quite sometime ago
-
 ## Todo (Totally not me just being lazy)
-### I dunno when I will do this but I'll get to it sooner or later
+### Once this is done, I will make the 2.1.0-Beta Update
+- [ ] Sufficient Testing with the new `get_chrome_history()` function
+- [X] Finished decoupling with `browserhistory` library
+- [ ] delete residual files with `os` lib on temp folder
 - [ ] Make it so that chrome is unopenable via `ctypes` lib
 - [ ] Make a builder for easier installation (Reason: I just never did it so I am not sure how and which approach should I do, should I go with `setup.py`? `build.bat`? [Probably going with `build.bat`])
 - [ ] Add `Hidden` attribute to the payload via either win32 lib or subprocessing lib (Reason: I am not sure if it would be easily detectable by an antivirus if I do that)
 - [ ] Consideration for sending stuff like chrome password etc via discord webhook
-- [ ] Make a switch incase you want to do it at a specific time (Reason: Might be slightly memory consuming to check it every few seconds)
+- [ ] Make a switch incase you want to do it at a specific time (Reason to not: Might be slightly memory consuming to check it every few seconds)
+=======
+Warning: `readme.md` is slightly outdated since I made it quite sometime ago
 
 ## Features:
 `Downloader` Features:
@@ -48,13 +51,12 @@ It used to have a wifi pw stealer but they are often detected by antiviruses
 ![Untitled Diagram drawio](https://user-images.githubusercontent.com/94969176/206345325-00603a96-ff7a-4c02-9fb3-18cb8979fcb6.png)
 
 ## Prerequisites
-- Python 3.9 or up
+- Python
 - Pyinstaller
 - mimetypes
 - smtplib
 - email.message 
 - urllib2
-- browserhistory 
 - urllib.request
 
 (Not updated yet)
